@@ -7,14 +7,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&family=Give+You+Glory&family=Freeman&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
 
     <style>
-      /* RESET */
+     
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
       }
 
-      /* BASE PAGE */
+     
       html {
         height: auto;
       }
@@ -28,3 +28,56 @@
         background: #fff;
         position: relative;
       }
+.notebook-bg {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1200px;
+    height: 100%;
+    background-image: url("https://smittya295.github.io/project/Artboard2.jpg");
+    background-repeat: repeat-y;
+    background-size: 1200px auto;
+    background-position: top center;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+    padding: 60px 70px 120px 70px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.subtitle {
+    font-family: "Give You Glory", cursive;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.hero-title {
+    font-family: "Irish Grover", cursive;
+    font-size: 5rem;
+    color: #6AE5B5;
+}
+
+nav ul {
+    list-style: none;
+    border-top: 1px solid #111;
+    border-bottom: 1px solid #111;
+    padding: 16px 0;
+    margin-top: 28px;
+}
+
+nav li {
+    display: inline-block;
+    margin: 0 28px;
+    font-family: "Freeman", sans-serif;
+    font-size: 1.2rem;
+}
+      
