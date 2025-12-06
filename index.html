@@ -33,9 +33,9 @@ body {
     left: 50%;
     transform: translateX(-50%);
     width: 1200px;
-    height: 100%;
+    height: 5400px;
     background-image: url("https://smittya295.github.io/project/Artboard2.jpg");
-    background-repeat: repeat-y;
+    background-repeat: no-repeat;
     background-size: 1200px auto;
     background-position: top center;
     z-index: -1;
@@ -90,7 +90,7 @@ nav a:hover {
 }
 
 section {
-    margin-bottom: 140px;
+    margin-bottom: 100px;
 }
 
 .section-title {
@@ -108,13 +108,11 @@ section {
     display: grid;
     grid-template-columns: 260px auto;
     gap: 55px;
-    margin-left: 120px;
 }
 
 .about-grid img {
     width: 240px;
     height: 240px;
-    border: none;
     object-fit: cover;
 }
 
@@ -138,48 +136,44 @@ section {
 .skills-list img {
     width: 55px;
     margin-right: 10px;
-    border: none;
 }
 
 .logo-grid {
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    gap: 60px 40px;
+    gap: 40px;
     padding: 0 15px;
-    margin-left: 120px;
 }
 
 .logo-grid img {
     width: 100%;
-    height: 200px;
+    height: 150px;
     object-fit: contain;
     background: transparent;
-    border: none;
 }
 
 .logo-caption {
     text-align: center;
-    margin-top: 12px;
+    margin-top: 8px;
 }
 
 .poster-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 50px 60px;
-    margin-left: 120px;
+    grid-template-columns: repeat(4,1fr);
+    gap: 35px;
+    padding: 0 10px;
 }
 
 .poster-grid img {
     width: 100%;
-    height: auto;
-    max-height: 430px;
+    height: 260px;
     object-fit: contain;
-    border: none;
+    background: transparent;
 }
 
 .poster-caption {
     text-align: center;
-    margin-top: 10px;
+    margin-top: 8px;
 }
 
 .contact {
@@ -187,7 +181,6 @@ section {
     grid-template-columns: 1.3fr 1fr;
     gap: 50px;
     margin-bottom: 40px;
-    margin-left: 120px;
 }
 
 footer {
@@ -197,7 +190,6 @@ footer {
 }
 </style>
 </head>
-
 
 <body>
 
@@ -226,7 +218,7 @@ footer {
         <img src="portrait-placeholder.png" alt="Portrait">
 
         <div>
-            <p>I'm a 19-year-old design student from London Ontario with the hopes of one day becoming a professional graphic designer. I'm currently majoring in my second year of Global Business and Digital Arts at the University of Waterloo...</p>
+            <p>I'm a 19-year-old design student from London Ontario with the hopes of one day becoming a professional graphic designer. I'm currently majoring in my second year of Global Business and Digital Arts at the University of Waterloo, and some design processes I enjoy include typography, website design, poster design, and brand identity creation.</p>
 
             <div class="details">
                 <div>
@@ -244,9 +236,9 @@ footer {
                 <div>
                     <h3>SOFTWARE SKILLS</h3>
                     <div class="skills-list">
-                        <img src="ps.png">
-                        <img src="ai.png">
-                        <img src="id.png">
+                        <img src="ps.png" alt="Photoshop">
+                        <img src="ai.png" alt="Illustrator">
+                        <img src="id.png" alt="InDesign">
                     </div>
                 </div>
 
@@ -263,35 +255,37 @@ footer {
     <div class="section-title">LOGOFOLIO</div>
 
     <div class="logo-grid">
+
         <div>
-            <img src="sun-face.png">
+            <img src="sun-face.png" alt="Sun Face Logo">
             <p class="logo-caption">First year GBDA project creating logos connected to personality traits.</p>
         </div>
 
         <div>
-            <img src="prof-caricature.png">
+            <img src="prof-caricature.png" alt="Professor Caricature">
             <p class="logo-caption">Second year GBDA project featuring a caricature of Professor Will Zhao.</p>
         </div>
 
         <div>
-            <img src="steel-ball-run.png">
+            <img src="steel-ball-run.png" alt="Steel Ball Run Logo">
             <p class="logo-caption">Reinterpretation of the Steel Ball Run logo.</p>
         </div>
 
         <div>
-            <img src="skills-pin.png">
+            <img src="skills-pin.png" alt="Skills Ontario Pin">
             <p class="logo-caption">2024 Ontario Skills competition pin design submission.</p>
         </div>
 
         <div>
-            <img src="snacks-lattes-logo.png">
+            <img src="snacks-lattes-logo.png" alt="Snacks and Lattes Logo">
             <p class="logo-caption">Brand identity created for a board game café.</p>
         </div>
 
         <div>
-            <img src="skills-medal.png">
+            <img src="skills-medal.png" alt="Skills Ontario Medal">
             <p class="logo-caption">2024 Ontario Skills competition medal redesign contest entry.</p>
         </div>
+
     </div>
 </section>
 
@@ -301,32 +295,32 @@ footer {
     <div class="poster-grid">
 
         <div>
-            <img src="cake-pops.png">
+            <img src="cake-pops.png" alt="Cake Pops Poster">
             <p class="poster-caption">When Life Gives You a Failed Cake… Make Cake Pops!</p>
         </div>
 
         <div>
-            <img src="la-la-land.png">
+            <img src="la-la-land.png" alt="La La Land Poster">
             <p class="poster-caption">La La Land – minimalistic reinterpretation.</p>
         </div>
 
         <div>
-            <img src="shrek-poster.png">
+            <img src="shrek-poster.png" alt="Shrek Poster">
             <p class="poster-caption">Shrek the Musical promotional poster.</p>
         </div>
 
         <div>
-            <img src="silly-billies.png">
+            <img src="silly-billies.png" alt="Silly Billies Poster">
             <p class="poster-caption">Hand-drawn poster for The Silly Billies.</p>
         </div>
 
         <div>
-            <img src="snacks-lattes-poster.png">
+            <img src="snacks-lattes-poster.png" alt="Snacks & Lattes Poster">
             <p class="poster-caption">Snacks & Lattes Grand Opening promotional design.</p>
         </div>
 
         <div>
-            <img src="elo-poster.png">
+            <img src="elo-poster.png" alt="ELO Poster">
             <p class="poster-caption">Psychedelic themed geometric poster.</p>
         </div>
 
@@ -340,7 +334,7 @@ footer {
         <p>Thanks for viewing my portfolio! Feel free to reach out.</p>
 
         <div>
-            <h3 style="font-family:'Freeman', sans-serif;">Get in Touch</h3>
+            <h3 style="font-family: 'Freeman', sans-serif;">Get in Touch</h3>
             <p><a href="mailto:smittya295@uwaterloo.ca">Email Me</a></p>
             <p><a href="#top">Back to Top ↑</a></p>
         </div>
