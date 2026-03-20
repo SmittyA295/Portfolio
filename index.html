@@ -8,443 +8,330 @@
 <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&family=Give+You+Glory&family=Freeman&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+:root{
+    --page-width:1200px;
+    --content-width:820px;
+    --shift-right:100px;
+    --paper-left:190px;
+    --section-gap:260px;
+    --paper-bg:rgba(255,255,255,.84);
+    --border:1px solid rgba(0,0,0,.16);
+    --title-font:"Freeman","Trebuchet MS",Arial,sans-serif;
+    --body-font:"Nanum Pen Script","Comic Sans MS","Segoe UI",cursive,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+    font-family:var(--body-font);
+    font-size:22px;
+    line-height:1.5;
+    color:#222;
+    background:#fff;
+    position:relative;
+    min-height:100vh;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+
+.notebook-bg{
+    position:absolute;
+    inset:0 auto 0 50%;
+    transform:translateX(-50%);
+    width:var(--page-width);
+    min-height:100%;
+    background:url("https://smittya295.github.io/project/Artboard2.jpg") top center / var(--page-width) auto repeat-y;
+    z-index:-1;
+    pointer-events:none;
 }
 
-html {
-    scroll-behavior: smooth;
+.container{
+    width:var(--page-width);
+    margin-left:calc(50% - 600px + var(--shift-right));
+    padding:140px 0 140px;
+}
+.paper-column{
+    width:var(--content-width);
+    margin-left:var(--paper-left);
 }
 
-:root {
-    --page-width: 1200px;
-    --content-width: 820px;
-    --page-shift-right: 100px;
-    --section-gap: 260px;
-    --paper-left-offset: 190px;
-    --body-text: 22px;
+header{text-align:center}
+.subtitle{
+    font-family:"Give You Glory","Segoe Script",cursive;
+    font-size:2rem;
+    margin-bottom:4px;
+}
+.hero-title{
+    font-family:"Irish Grover",Impact,sans-serif;
+    font-size:5rem;
+    line-height:1;
+    color:#6AE5B5;
+    margin-bottom:14px;
+}
+.hero-note{
+    max-width:620px;
+    margin:0 auto;
+    font-size:1.3rem;
 }
 
-body {
-    font-family: "Nanum Pen Script", "Comic Sans MS", "Segoe UI", cursive, sans-serif;
-    font-size: var(--body-text);
-    line-height: 1.5;
-    color: #222;
-    background: #fff;
-    position: relative;
-    min-height: 100vh;
+nav{margin-top:28px}
+nav ul{
+    list-style:none;
+    border-top:1px solid #111;
+    border-bottom:1px solid #111;
+    padding:15px 0;
+}
+nav li{
+    display:inline-block;
+    margin:0 24px;
+    font-family:var(--title-font);
+    font-size:1.1rem;
+}
+nav a{
+    text-decoration:none;
+    transition:.2s ease;
+}
+nav a:hover{
+    color:#2fa97f;
+    letter-spacing:.4px;
 }
 
-.notebook-bg {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: var(--page-width);
-    min-height: 100%;
-    height: 100%;
-    background-image: url("https://smittya295.github.io/project/Artboard2.jpg");
-    background-repeat: repeat-y;
-    background-size: var(--page-width) auto;
-    background-position: top center;
-    z-index: -1;
-    pointer-events: none;
+section{scroll-margin-top:40px}
+#about{margin-top:330px}
+#featured{margin-top:260px}
+#logos{margin-top:210px}
+#posters{margin-top:260px}
+
+.section-title{
+    text-align:center;
+    font-family:var(--title-font);
+    font-size:2.35rem;
+    margin-bottom:10px;
+}
+.section-intro{
+    text-align:center;
+    max-width:640px;
+    margin:0 auto 38px;
+    font-size:1.2rem;
 }
 
-.container {
-    width: var(--page-width);
-    margin-left: calc(50% - 600px + var(--page-shift-right));
-    padding: 70px 0 140px 0;
-    position: relative;
-}
-
-.paper-column {
-    width: var(--content-width);
-    margin-left: var(--paper-left-offset);
-}
-
-/* HEADER */
-
-header {
-    text-align: center;
-    padding-top: 70px;
-}
-
-.subtitle {
-    font-family: "Give You Glory", "Segoe Script", cursive;
-    font-size: 2rem;
-    margin-bottom: 4px;
-}
-
-.hero-title {
-    font-family: "Irish Grover", Impact, sans-serif;
-    font-size: 5rem;
-    color: #6AE5B5;
-    line-height: 1;
-    margin-bottom: 14px;
-}
-
-.hero-note {
-    max-width: 620px;
-    margin: 0 auto;
-    font-size: 1.3rem;
-}
-
-nav {
-    margin-top: 28px;
-}
-
-nav ul {
-    list-style: none;
-    border-top: 1px solid #111;
-    border-bottom: 1px solid #111;
-    padding: 15px 0;
-}
-
-nav li {
-    display: inline-block;
-    margin: 0 24px;
-    font-family: "Freeman", "Trebuchet MS", Arial, sans-serif;
-    font-size: 1.1rem;
-}
-
-nav a {
-    color: #000;
-    text-decoration: none;
-    transition: color 0.2s ease, letter-spacing 0.2s ease;
-}
-
-nav a:hover {
-    color: #2fa97f;
-    letter-spacing: 0.4px;
-}
-
-/* SECTIONS */
-
-section {
-    scroll-margin-top: 40px;
-}
-
-#about {
-    margin-top: 330px; /* moved down so it sits below the ripped divider */
-}
-
-#featured,
-#logos,
-#posters {
-    margin-top: var(--section-gap);
-}
-
-.section-title {
-    text-align: center;
-    font-family: "Freeman", "Trebuchet MS", Arial, sans-serif;
-    font-size: 2.35rem;
-    margin-bottom: 10px;
-}
-
-.section-intro {
-    text-align: center;
-    max-width: 640px;
-    margin: 0 auto 38px auto;
-    font-size: 1.2rem;
-}
-
-/* ABOUT */
-
-.about-grid {
-    display: grid;
-    grid-template-columns: 360px 1fr;
-    gap: 38px;
-    align-items: start;
-}
-
-/* speech bubble / portrait composition */
-.portrait-wrap {
-    position: relative;
-    width: 360px;
-    height: 560px;
-}
-
-.portrait-bubble {
-    position: absolute;
-    left: 0;
-    top: 62px;
-    width: 330px;
-    height: 460px;
-    background: rgba(255,255,255,0.78);
-    clip-path: polygon(7% 28%, 33% 14%, 68% 6%, 100% 31%, 91% 77%, 31% 79%, 20% 100%, 20% 74%, 2% 62%);
-    z-index: 1;
-}
-
-.about-portrait-frame {
-    position: absolute;
-    left: 122px;
-    top: 0;
-    width: 240px;
-    height: 240px;
-    border: 2px solid #222;
-    background: rgba(255,255,255,0.86);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 2;
-}
-
-.about-portrait {
-    width: 208px;
-    height: 208px;
-    object-fit: cover;
-    display: block;
-}
-
-/* ABOUT TEXT SIDE */
-
-.about-copy > p {
-    margin-bottom: 20px;
-}
-
-.details-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 22px;
-    margin-top: 8px;
-}
-
-.detail-card {
-    border: 1px solid rgba(0,0,0,0.16);
-    background: rgba(255,255,255,0.84);
-    padding: 18px 18px 16px 18px;
-    min-height: 132px;
-}
-
-.detail-card h3 {
-    font-family: "Freeman", "Trebuchet MS", Arial, sans-serif;
-    font-size: 1.15rem;
-    margin-bottom: 8px;
-}
-
-.skills-list {
-    display: flex;
-    gap: 16px;
-    align-items: flex-end;
-    flex-wrap: wrap;
-    margin-top: 6px;
-}
-
-/* critical fix: don't force equal height/width */
-.skills-list img {
-    width: auto;
-    height: auto;
-    max-height: 92px;
-    max-width: 92px;
-    object-fit: contain;
-    display: block;
-}
-
-/* FEATURED */
-
-.featured-grid {
-    display: grid;
-    grid-template-columns: 1.15fr 0.85fr;
-    gap: 26px;
-}
-
+/* Shared card styles */
+.panel,
 .feature-main,
-.feature-stack-card {
-    border: 1px solid rgba(0,0,0,0.16);
-    background: rgba(255,255,255,0.84);
-    padding: 18px;
+.feature-stack-card,
+.work-card,
+.detail-card{
+    border:var(--border);
+    background:var(--paper-bg);
+}
+.project-kicker,
+.project-title,
+.work-text h3,
+.detail-card h3{
+    font-family:var(--title-font);
+}
+.project-kicker{
+    font-size:.95rem;
+    letter-spacing:.4px;
+    margin-bottom:4px;
+}
+.project-title{
+    font-size:1.18rem;
+    margin-bottom:6px;
+}
+.project-caption,
+.work-text p{
+    font-size:1.05rem;
 }
 
-.feature-main img {
-    width: 100%;
-    height: 345px;
-    object-fit: contain;
-    display: block;
-    margin-bottom: 16px;
+/* About */
+.about-grid{
+    display:grid;
+    grid-template-columns:360px 1fr;
+    gap:38px;
+    align-items:start;
+}
+.portrait-wrap{
+    position:relative;
+    width:360px;
+    height:560px;
+}
+.portrait-bubble{
+    position:absolute;
+    left:0;
+    top:62px;
+    width:330px;
+    height:460px;
+    background:rgba(255,255,255,.78);
+    clip-path:polygon(7% 28%,33% 14%,68% 6%,100% 31%,91% 77%,31% 79%,20% 100%,20% 74%,2% 62%);
+}
+.about-portrait-frame{
+    position:absolute;
+    left:122px;
+    top:0;
+    width:240px;
+    height:240px;
+    background:rgba(255,255,255,.86);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+.about-portrait{
+    width:208px;
+    height:208px;
+    object-fit:cover;
+    border:none;
+    outline:none;
+    box-shadow:none;
+}
+.about-copy>p{margin-bottom:20px}
+.details-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:22px;
+}
+.detail-card{
+    padding:18px 18px 16px;
+    min-height:132px;
+}
+.detail-card h3{
+    font-size:1.15rem;
+    margin-bottom:8px;
+}
+.skills-list{
+    display:flex;
+    gap:16px;
+    align-items:flex-end;
+    flex-wrap:wrap;
+    margin-top:6px;
+}
+.skills-list img{
+    width:auto;
+    height:auto;
+    max-width:92px;
+    max-height:92px;
+    object-fit:contain;
 }
 
-.feature-stack {
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    gap: 26px;
+/* Featured */
+.featured-grid{
+    display:grid;
+    grid-template-columns:1.15fr .85fr;
+    gap:26px;
+}
+.feature-main,
+.feature-stack-card{
+    padding:18px;
+}
+.feature-main img{
+    width:100%;
+    height:345px;
+    object-fit:contain;
+    margin-bottom:16px;
+}
+.feature-stack{
+    display:grid;
+    gap:26px;
+}
+.feature-stack-card img{
+    width:100%;
+    height:155px;
+    object-fit:contain;
+    margin-bottom:14px;
 }
 
-.feature-stack-card img {
-    width: 100%;
-    height: 155px;
-    object-fit: contain;
-    display: block;
-    margin-bottom: 14px;
+/* Work sections */
+.work-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:26px;
+}
+.work-card{
+    display:grid;
+    grid-template-columns:170px 1fr;
+    gap:18px;
+    align-items:center;
+    padding:16px;
+}
+.work-card img{
+    width:100%;
+    height:150px;
+    object-fit:contain;
+}
+.poster-card img{height:210px}
+.work-text h3{
+    font-size:1.12rem;
+    margin-bottom:6px;
 }
 
-.project-kicker {
-    font-family: "Freeman", "Trebuchet MS", Arial, sans-serif;
-    font-size: 0.95rem;
-    letter-spacing: 0.4px;
-    margin-bottom: 4px;
+footer{
+    width:var(--content-width);
+    margin:180px 0 0 var(--paper-left);
+    text-align:center;
+    font-size:1rem;
+    font-family:var(--title-font);
 }
-
-.project-title {
-    font-family: "Freeman", "Trebuchet MS", Arial, sans-serif;
-    font-size: 1.18rem;
-    margin-bottom: 6px;
+footer a{
+    display:inline-block;
+    margin-top:10px;
+    text-decoration:none;
 }
+footer a:hover{text-decoration:underline}
 
-.project-caption {
-    font-size: 1.08rem;
-}
-
-/* GALLERY SECTIONS */
-
-.work-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 26px;
-}
-
-.work-card {
-    display: grid;
-    grid-template-columns: 170px 1fr;
-    gap: 18px;
-    border: 1px solid rgba(0,0,0,0.16);
-    background: rgba(255,255,255,0.82);
-    padding: 16px;
-    align-items: center;
-}
-
-.work-card img {
-    width: 100%;
-    height: 150px;
-    object-fit: contain;
-    display: block;
-}
-
-.poster-card img {
-    height: 210px;
-}
-
-.work-text h3 {
-    font-family: "Freeman", "Trebuchet MS", Arial, sans-serif;
-    font-size: 1.12rem;
-    margin-bottom: 6px;
-}
-
-.work-text p {
-    font-size: 1.05rem;
-}
-
-footer {
-    width: var(--content-width);
-    margin-left: var(--paper-left-offset);
-    text-align: center;
-    margin-top: 200px;
-    padding-top: 28px;
-    border-top: 1px solid #111;
-    font-size: 1rem;
-    font-family: "Freeman", "Trebuchet MS", Arial, sans-serif;
-}
-
-footer a {
-    display: inline-block;
-    margin-top: 10px;
-    color: #000;
-    text-decoration: none;
-}
-
-footer a:hover {
-    text-decoration: underline;
-}
-
-/* RESPONSIVE */
-
-@media (max-width: 1320px) {
-    .container {
-        width: 100%;
-        margin-left: 0;
-        padding-left: 28px;
-        padding-right: 28px;
+@media (max-width:1320px){
+    .container{
+        width:100%;
+        margin-left:0;
+        padding-left:28px;
+        padding-right:28px;
     }
-
-    .paper-column,
-    footer {
-        width: 100%;
-        margin-left: 0;
+    .paper-column,footer{
+        width:100%;
+        margin-left:0;
     }
-
-    .notebook-bg {
-        width: 100%;
-        background-size: cover;
+    .notebook-bg{
+        width:100%;
+        background-size:cover;
     }
 }
-
-@media (max-width: 920px) {
+@media (max-width:920px){
     .about-grid,
     .details-grid,
     .featured-grid,
     .work-grid,
-    .work-card {
-        grid-template-columns: 1fr;
+    .work-card{
+        grid-template-columns:1fr;
     }
-
-    .feature-stack {
-        grid-template-rows: auto;
+    .hero-title{font-size:3.7rem}
+    nav li{
+        display:block;
+        margin:10px 0;
     }
-
-    .hero-title {
-        font-size: 3.7rem;
+    .portrait-wrap{
+        width:320px;
+        height:500px;
+        margin:0 auto;
     }
-
-    nav li {
-        display: block;
-        margin: 10px 0;
+    .portrait-bubble{
+        width:300px;
+        height:400px;
+        top:76px;
     }
-
-    .portrait-wrap {
-        margin: 0 auto;
-        width: 320px;
-        height: 500px;
-    }
-
-    .portrait-bubble {
-        width: 300px;
-        height: 400px;
-        top: 76px;
-    }
-
-    .about-portrait-frame {
-        left: 90px;
-    }
-
+    .about-portrait-frame{left:90px}
     .feature-main img,
     .feature-stack-card img,
     .work-card img,
-    .poster-card img {
-        height: auto;
-        max-height: 320px;
+    .poster-card img{
+        height:auto;
+        max-height:320px;
     }
-
-    #about {
-        margin-top: 240px;
-    }
-
-    #featured,
-    #logos,
-    #posters {
-        margin-top: 170px;
-    }
-
-    footer {
-        margin-top: 140px;
-    }
+    #about{margin-top:240px}
+    #featured,#logos,#posters{margin-top:170px}
+    footer{margin-top:140px}
 }
 </style>
 </head>
 
 <body>
-
 <div class="notebook-bg"></div>
 
 <div class="container">
@@ -491,9 +378,9 @@ footer a:hover {
                     <div class="detail-card">
                         <h3>SOFTWARE SKILLS</h3>
                         <div class="skills-list">
-                            <img src="ai.png" alt="Adobe Illustrator icon">
                             <img src="ps.png" alt="Adobe Photoshop icon">
-                            <img src="figma.png" alt="Figma icon">
+                            <img src="ai.png" alt="Adobe Illustrator icon">
+                            <img src="https://cdn.simpleicons.org/figma/0F3E46" alt="Figma icon">
                         </div>
                     </div>
 
