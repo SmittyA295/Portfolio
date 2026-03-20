@@ -58,13 +58,13 @@ a{color:inherit}
     margin-left:var(--paper-left);
 }
 
-/* centered header, independent from offset content */
+/* centered header independent of right-shifted content */
 .hero-shell{
-    width:var(--page-width);
-    margin-left:calc(-1 * var(--paper-left));
+    width:100%;
+    margin:0 auto;
 }
 .hero-inner{
-    max-width:760px;
+    width:760px;
     margin:0 auto;
     text-align:center;
 }
@@ -147,8 +147,8 @@ section{
 .mozy-main,
 .mozy-small,
 .app-header,
-.app-large,
-.app-small{
+.app-main,
+.app-card{
     background:var(--panel-bg);
     border:var(--panel-border);
 }
@@ -375,18 +375,22 @@ section{
 }
 
 /* CAMPUSHAVEN */
+.app-header{
+    margin-bottom:30px;
+}
+
 .app-grid{
     display:grid;
-    grid-template-columns:1.05fr .95fr;
+    grid-template-columns:1.08fr .92fr;
     gap:26px;
     align-items:start;
 }
 
-.app-large{
+.app-main{
     padding:18px;
 }
 
-.app-large img{
+.app-main img{
     width:100%;
     height:auto;
     max-height:760px;
@@ -398,18 +402,27 @@ section{
     display:grid;
     grid-template-columns:1fr 1fr;
     gap:26px;
+    align-items:start;
 }
 
-.app-small{
+.app-card{
     padding:16px;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    min-height:100%;
 }
 
-.app-small img{
+.app-card img{
     width:100%;
     height:auto;
-    max-height:320px;
+    max-height:300px;
     object-fit:contain;
     margin:0 auto 12px;
+}
+
+.app-card.tall img{
+    max-height:360px;
 }
 
 footer{
@@ -439,10 +452,14 @@ footer a:hover{
     }
 
     .paper-column,
-    .hero-shell,
     footer{
         width:100%;
         margin-left:0;
+    }
+
+    .hero-inner{
+        width:100%;
+        max-width:760px;
     }
 
     .notebook-bg{
@@ -494,8 +511,8 @@ footer a:hover{
     .poster-card img,
     .mozy-main img,
     .mozy-small img,
-    .app-large img,
-    .app-small img{
+    .app-main img,
+    .app-card img{
         height:auto;
         max-height:none;
     }
@@ -742,7 +759,7 @@ footer a:hover{
         <div class="section-intro">CampusHaven was a group project focused on student housing. Our team identified housing as a major issue for students, interviewed students about their challenges, and cross-referenced those pain points to design a streamlined peer-based app for finding dependable housing and comparing apartment reviews across useful categories.</div>
 
         <div class="app-header">
-            <img class="app-logo" src="Untitled (6).png" alt="CampusHaven login screen with logo">
+            <img class="app-logo" src="Untitled (13).png" alt="CampusHaven logo">
             <div>
                 <div class="project-kicker">Group Project • Student App Concept</div>
                 <div class="project-title">CampusHaven</div>
@@ -751,7 +768,7 @@ footer a:hover{
         </div>
 
         <div class="app-grid">
-            <article class="app-large">
+            <article class="app-main">
                 <img src="Untitled (7).png" alt="CampusHaven home screen">
                 <div class="project-kicker">Main Experience</div>
                 <div class="project-title">Housing Discovery Home Screen</div>
@@ -759,35 +776,42 @@ footer a:hover{
             </article>
 
             <div class="app-side">
-                <article class="app-small">
+                <article class="app-card">
+                    <img src="Untitled (6).png" alt="CampusHaven login screen">
+                    <div class="project-kicker">Entry Point</div>
+                    <div class="project-title">Login Screen</div>
+                    <p class="project-caption">A simple onboarding screen that introduces the visual identity and keeps account access straightforward.</p>
+                </article>
+
+                <article class="app-card">
                     <img src="Untitled (8).png" alt="CampusHaven search screen">
                     <div class="project-kicker">Search</div>
                     <div class="project-title">Property Search</div>
                     <p class="project-caption">A focused search screen built to help students quickly compare listings and narrow down housing options.</p>
                 </article>
 
-                <article class="app-small">
+                <article class="app-card tall">
                     <img src="Untitled (9).png" alt="CampusHaven review screen">
                     <div class="project-kicker">My Contribution</div>
                     <div class="project-title">Review Screen</div>
                     <p class="project-caption">I designed the review screen to highlight peer feedback, category ratings, and a clearer sense of trust around each property.</p>
                 </article>
 
-                <article class="app-small">
+                <article class="app-card">
                     <img src="Untitled (10).png" alt="CampusHaven property detail screen">
                     <div class="project-kicker">Details</div>
                     <div class="project-title">Property Detail View</div>
                     <p class="project-caption">This screen supports deeper browsing with images, quick property facts, and interaction options that help users evaluate a space efficiently.</p>
                 </article>
 
-                <article class="app-small">
+                <article class="app-card">
                     <img src="Untitled (11).png" alt="CampusHaven chat screen">
                     <div class="project-kicker">Interactivity</div>
                     <div class="project-title">Messaging Flow</div>
                     <p class="project-caption">I also helped shape the app’s interactivity, including communication features that make the housing process feel more direct and practical.</p>
                 </article>
 
-                <article class="app-small">
+                <article class="app-card tall">
                     <img src="Untitled (12).png" alt="CampusHaven profile screen">
                     <div class="project-kicker">My Contribution</div>
                     <div class="project-title">Profile Screen</div>
