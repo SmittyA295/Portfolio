@@ -13,7 +13,7 @@
     --content-width: 820px;
     --shift-right: 100px;
     --paper-left: 190px;
-    --panel-bg: rgba(255,255,255,.86);
+    --panel-bg: rgba(255,255,255,.88);
     --panel-border: 1px solid rgba(0,0,0,.15);
     --title-font: "Freeman","Trebuchet MS",Arial,sans-serif;
     --body-font: "Nanum Pen Script","Comic Sans MS","Segoe UI",cursive,sans-serif;
@@ -24,13 +24,13 @@
 html{scroll-behavior:smooth}
 
 body{
-    font-family: var(--body-font);
-    font-size: 22px;
-    line-height: 1.5;
-    color: #222;
-    background: #fff;
-    position: relative;
-    min-height: 100vh;
+    font-family:var(--body-font);
+    font-size:22px;
+    line-height:1.5;
+    color:#222;
+    background:#fff;
+    position:relative;
+    min-height:100vh;
 }
 
 img{display:block;max-width:100%}
@@ -58,7 +58,14 @@ a{color:inherit}
     margin-left:var(--paper-left);
 }
 
-header{
+/* centered header, independent from offset content */
+.hero-shell{
+    width:var(--page-width);
+    margin-left:calc(-1 * var(--paper-left));
+}
+.hero-inner{
+    max-width:760px;
+    margin:0 auto;
     text-align:center;
 }
 
@@ -115,6 +122,7 @@ section{
 #logos{margin-top:230px}
 #posters{margin-top:var(--transition-safe-gap)}
 #web-design{margin-top:var(--transition-safe-gap)}
+#app-design{margin-top:var(--transition-safe-gap)}
 
 .section-title{
     text-align:center;
@@ -125,7 +133,7 @@ section{
 
 .section-intro{
     text-align:center;
-    max-width:680px;
+    max-width:720px;
     margin:0 auto 38px;
     font-size:1.2rem;
 }
@@ -137,7 +145,10 @@ section{
 .work-card,
 .mozy-header,
 .mozy-main,
-.mozy-small{
+.mozy-small,
+.app-header,
+.app-large,
+.app-small{
     background:var(--panel-bg);
     border:var(--panel-border);
 }
@@ -276,7 +287,7 @@ section{
     margin-bottom:14px;
 }
 
-/* GENERAL WORK SECTIONS */
+/* GENERAL WORK */
 .work-grid{
     display:grid;
     grid-template-columns:repeat(2,1fr);
@@ -306,12 +317,14 @@ section{
     margin-bottom:6px;
 }
 
-/* MOZY WEB DESIGN */
-#web-design .section-intro{
+/* MOZY */
+#web-design .section-intro,
+#app-design .section-intro{
     max-width:760px;
 }
 
-.mozy-header{
+.mozy-header,
+.app-header{
     display:grid;
     grid-template-columns:180px 1fr;
     gap:22px;
@@ -320,7 +333,8 @@ section{
     margin-bottom:28px;
 }
 
-.mozy-logo{
+.mozy-logo,
+.app-logo{
     width:100%;
     max-width:160px;
     object-fit:contain;
@@ -341,10 +355,10 @@ section{
 
 .mozy-main img{
     width:100%;
-    height:420px;
-    object-fit:cover;
-    object-position:top center;
+    height:auto;
+    object-fit:contain;
     margin-bottom:16px;
+    background:#fff;
 }
 
 .mozy-side{
@@ -354,10 +368,48 @@ section{
 
 .mozy-small img{
     width:100%;
-    height:185px;
-    object-fit:cover;
-    object-position:top center;
+    height:auto;
+    object-fit:contain;
     margin-bottom:14px;
+    background:#fff;
+}
+
+/* CAMPUSHAVEN */
+.app-grid{
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+    gap:26px;
+    align-items:start;
+}
+
+.app-large{
+    padding:18px;
+}
+
+.app-large img{
+    width:100%;
+    height:auto;
+    max-height:760px;
+    object-fit:contain;
+    margin:0 auto 14px;
+}
+
+.app-side{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:26px;
+}
+
+.app-small{
+    padding:16px;
+}
+
+.app-small img{
+    width:100%;
+    height:auto;
+    max-height:320px;
+    object-fit:contain;
+    margin:0 auto 12px;
 }
 
 footer{
@@ -387,6 +439,7 @@ footer a:hover{
     }
 
     .paper-column,
+    .hero-shell,
     footer{
         width:100%;
         margin-left:0;
@@ -405,7 +458,10 @@ footer a:hover{
     .work-grid,
     .work-card,
     .mozy-header,
-    .mozy-grid{
+    .mozy-grid,
+    .app-header,
+    .app-grid,
+    .app-side{
         grid-template-columns:1fr;
     }
 
@@ -437,17 +493,20 @@ footer a:hover{
     .work-card img,
     .poster-card img,
     .mozy-main img,
-    .mozy-small img{
+    .mozy-small img,
+    .app-large img,
+    .app-small img{
         height:auto;
-        max-height:320px;
+        max-height:none;
     }
 
-    .mozy-logo{
+    .mozy-logo,
+    .app-logo{
         max-width:140px;
     }
 
     #about{margin-top:240px}
-    #featured,#logos,#posters,#web-design{margin-top:170px}
+    #featured,#logos,#posters,#web-design,#app-design{margin-top:170px}
     footer{margin-top:140px}
 }
 </style>
@@ -458,8 +517,8 @@ footer a:hover{
 
 <div class="container">
 
-    <div class="paper-column">
-        <header id="top">
+    <header id="top" class="hero-shell">
+        <div class="hero-inner">
             <div class="subtitle">Graphic Design</div>
             <div class="hero-title">PORTFOLIO</div>
             <div class="hero-note">Branding and visual identity designer focused on bold, expressive graphics and character-driven design.</div>
@@ -471,14 +530,15 @@ footer a:hover{
                     <li><a href="#logos">Logofolio</a></li>
                     <li><a href="#posters">Posterfolio</a></li>
                     <li><a href="#web-design">Web Design</a></li>
+                    <li><a href="#app-design">App Design</a></li>
                 </ul>
             </nav>
-        </header>
-    </div>
+        </div>
+    </header>
 
     <section id="about" class="paper-column">
         <div class="section-title">ABOUT ME</div>
-        <div class="section-intro">Design student focused on typography, branding, poster design, and visual storytelling.</div>
+        <div class="section-intro">Design student focused on typography, branding, poster design, web design, and visual storytelling.</div>
 
         <div class="about-grid">
             <div class="portrait-wrap">
@@ -654,30 +714,84 @@ footer a:hover{
         <div class="mozy-grid">
             <article class="mozy-main">
                 <img src="Mozy1.png" alt="Mozy's Shawarma homepage redesign">
-                <div class="mozy-text">
-                    <div class="project-kicker">Homepage</div>
-                    <div class="project-title">Landing Page Redesign</div>
-                    <p class="project-caption">A homepage redesign built around bold typography, strong food photography, and a clearer call to action for ordering.</p>
-                </div>
+                <div class="project-kicker">Homepage</div>
+                <div class="project-title">Landing Page Redesign</div>
+                <p class="project-caption">The homepage was rebuilt around a strong hero image, clearer menu options, and more confident branding so users can immediately understand the restaurant and act on ordering.</p>
             </article>
 
             <div class="mozy-side">
                 <article class="mozy-small">
                     <img src="Mozy2.png" alt="Mozy's Shawarma menu page redesign">
-                    <div class="mozy-text">
-                        <div class="project-kicker">Menu Page</div>
-                        <div class="project-title">Organized Product Navigation</div>
-                        <p class="project-caption">The menu layout was reworked to make categories easier to scan and the browsing experience more intuitive.</p>
-                    </div>
+                    <div class="project-kicker">Menu Page</div>
+                    <div class="project-title">Organized Product Navigation</div>
+                    <p class="project-caption">The menu layout was reworked to make categories easier to scan and the browsing experience more intuitive.</p>
                 </article>
 
                 <article class="mozy-small">
                     <img src="Mozy3.png" alt="Mozy's Shawarma order page redesign">
-                    <div class="mozy-text">
-                        <div class="project-kicker">Order Flow</div>
-                        <div class="project-title">Pickup and Delivery Split</div>
-                        <p class="project-caption">This page simplifies the ordering process by separating key actions and making the next step immediately obvious.</p>
-                    </div>
+                    <div class="project-kicker">Order Flow</div>
+                    <div class="project-title">Pickup and Delivery Split</div>
+                    <p class="project-caption">This page simplifies the ordering process by separating key actions and making the next step immediately obvious.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="app-design" class="paper-column">
+        <div class="section-title">APP DESIGN</div>
+        <div class="section-intro">CampusHaven was a group project focused on student housing. Our team identified housing as a major issue for students, interviewed students about their challenges, and cross-referenced those pain points to design a streamlined peer-based app for finding dependable housing and comparing apartment reviews across useful categories.</div>
+
+        <div class="app-header">
+            <img class="app-logo" src="Untitled (6).png" alt="CampusHaven login screen with logo">
+            <div>
+                <div class="project-kicker">Group Project • Student App Concept</div>
+                <div class="project-title">CampusHaven</div>
+                <p class="project-caption">My role in the project focused on shaping the general visual identity of the app, creating the logo, designing the review screen and profile screen, and helping establish the app’s overall interactivity. The final concept aimed to make student housing research feel more trustworthy, organized, and student-centered.</p>
+            </div>
+        </div>
+
+        <div class="app-grid">
+            <article class="app-large">
+                <img src="Untitled (7).png" alt="CampusHaven home screen">
+                <div class="project-kicker">Main Experience</div>
+                <div class="project-title">Housing Discovery Home Screen</div>
+                <p class="project-caption">This screen establishes the primary browsing flow by surfacing reviewed properties, location details, and quick visual comparisons in a mobile-friendly layout.</p>
+            </article>
+
+            <div class="app-side">
+                <article class="app-small">
+                    <img src="Untitled (8).png" alt="CampusHaven search screen">
+                    <div class="project-kicker">Search</div>
+                    <div class="project-title">Property Search</div>
+                    <p class="project-caption">A focused search screen built to help students quickly compare listings and narrow down housing options.</p>
+                </article>
+
+                <article class="app-small">
+                    <img src="Untitled (9).png" alt="CampusHaven review screen">
+                    <div class="project-kicker">My Contribution</div>
+                    <div class="project-title">Review Screen</div>
+                    <p class="project-caption">I designed the review screen to highlight peer feedback, category ratings, and a clearer sense of trust around each property.</p>
+                </article>
+
+                <article class="app-small">
+                    <img src="Untitled (10).png" alt="CampusHaven property detail screen">
+                    <div class="project-kicker">Details</div>
+                    <div class="project-title">Property Detail View</div>
+                    <p class="project-caption">This screen supports deeper browsing with images, quick property facts, and interaction options that help users evaluate a space efficiently.</p>
+                </article>
+
+                <article class="app-small">
+                    <img src="Untitled (11).png" alt="CampusHaven chat screen">
+                    <div class="project-kicker">Interactivity</div>
+                    <div class="project-title">Messaging Flow</div>
+                    <p class="project-caption">I also helped shape the app’s interactivity, including communication features that make the housing process feel more direct and practical.</p>
+                </article>
+
+                <article class="app-small">
+                    <img src="Untitled (12).png" alt="CampusHaven profile screen">
+                    <div class="project-kicker">My Contribution</div>
+                    <div class="project-title">Profile Screen</div>
+                    <p class="project-caption">I designed the profile screen to organize student identity, saved content, and personal account information in a simple, clean layout.</p>
                 </article>
             </div>
         </div>
