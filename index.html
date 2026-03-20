@@ -18,10 +18,19 @@ html {
     scroll-behavior: smooth;
 }
 
+:root {
+    --page-width: 1200px;
+    --content-width: 820px;
+    --page-shift-right: 100px;
+    --section-gap: 220px;
+    --paper-left-offset: 190px;
+    --body-text: 22px;
+}
+
 body {
     font-family: "Nanum Pen Script", "Comic Sans MS", "Segoe UI", cursive, sans-serif;
-    font-size: 22px;
-    line-height: 1.55;
+    font-size: var(--body-text);
+    line-height: 1.5;
     color: #222;
     background: #fff;
     position: relative;
@@ -33,61 +42,74 @@ body {
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 1200px;
+    width: var(--page-width);
     min-height: 100%;
     height: 100%;
     background-image: url("https://smittya295.github.io/project/Artboard2.jpg");
     background-repeat: repeat-y;
-    background-size: 1200px auto;
+    background-size: var(--page-width) auto;
     background-position: top center;
     z-index: -1;
     pointer-events: none;
 }
 
 .container {
-    width: 1200px;
-    margin: 0 auto;
-    padding: 60px 70px 120px 70px;
+    width: var(--page-width);
+    margin-left: calc(50% - 600px + var(--page-shift-right));
+    padding: 70px 0 130px 0;
+    position: relative;
 }
+
+/* everything sits inside the main paper area, not the doodle bar */
+.paper-column {
+    width: var(--content-width);
+    margin-left: var(--paper-left-offset);
+}
+
+/* HEADER */
 
 header {
     text-align: center;
-    margin-top: 140px;
-    margin-bottom: 110px;
+    padding-top: 70px;
+    margin-bottom: 0;
 }
 
 .subtitle {
-    font-family: "Give You Glory", "Segoe Script", "Brush Script MT", cursive;
+    font-family: "Give You Glory", "Segoe Script", cursive;
     font-size: 2rem;
-    margin-bottom: 10px;
+    margin-bottom: 4px;
 }
 
 .hero-title {
-    font-family: "Irish Grover", Impact, "Arial Black", sans-serif;
+    font-family: "Irish Grover", Impact, sans-serif;
     font-size: 5rem;
     color: #6AE5B5;
-    margin-bottom: 12px;
+    line-height: 1;
+    margin-bottom: 14px;
 }
 
 .hero-note {
-    max-width: 640px;
+    max-width: 620px;
     margin: 0 auto;
-    font-size: 1.35rem;
+    font-size: 1.3rem;
+}
+
+nav {
+    margin-top: 28px;
 }
 
 nav ul {
     list-style: none;
     border-top: 1px solid #111;
     border-bottom: 1px solid #111;
-    padding: 16px 0;
-    margin-top: 28px;
+    padding: 15px 0;
 }
 
 nav li {
     display: inline-block;
-    margin: 0 28px;
+    margin: 0 24px;
     font-family: "Freeman", "Trebuchet MS", Arial, sans-serif;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 }
 
 nav a {
@@ -98,156 +120,191 @@ nav a {
 
 nav a:hover {
     color: #2fa97f;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.4px;
 }
 
+/* SECTIONS */
+
 section {
-    margin-bottom: 120px;
+    scroll-margin-top: 40px;
+}
+
+#about {
+    margin-top: 230px;
+}
+
+#featured,
+#logos,
+#posters {
+    margin-top: var(--section-gap);
 }
 
 .section-title {
     text-align: center;
     font-family: "Freeman", "Trebuchet MS", Arial, sans-serif;
-    font-size: 2.4rem;
-    margin-bottom: 12px;
+    font-size: 2.35rem;
+    margin-bottom: 10px;
 }
 
 .section-intro {
     text-align: center;
-    max-width: 680px;
-    margin: 0 auto 42px auto;
-    font-size: 1.25rem;
+    max-width: 640px;
+    margin: 0 auto 38px auto;
+    font-size: 1.2rem;
 }
 
-.content-section {
-    width: 940px;
-    margin: 0 auto;
-}
-
-#about {
-    margin-top: 120px;
-}
+/* ABOUT */
 
 .about-grid {
     display: grid;
-    grid-template-columns: 260px 1fr;
-    gap: 55px;
+    grid-template-columns: 250px 1fr;
+    gap: 40px;
     align-items: start;
 }
 
-.about-grid img {
+.about-portrait {
     width: 240px;
     height: 240px;
     object-fit: cover;
     border: 1px solid #111;
-    background: #fff;
+    background: rgba(255,255,255,0.82);
 }
 
-.about-copy p {
-    margin-bottom: 22px;
+.about-copy > p {
+    margin-bottom: 20px;
 }
 
-.details {
-    margin-top: 14px;
+.details-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 28px;
+    gap: 22px;
+    margin-top: 8px;
 }
 
 .detail-card {
     border: 1px solid rgba(0,0,0,0.16);
-    background: rgba(255,255,255,0.72);
-    padding: 18px 20px;
+    background: rgba(255,255,255,0.82);
+    padding: 18px 18px 16px 18px;
+    min-height: 132px;
 }
 
-.details h3 {
+.detail-card h3 {
     font-family: "Freeman", "Trebuchet MS", Arial, sans-serif;
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     margin-bottom: 8px;
 }
 
 .skills-list {
     display: flex;
-    align-items: center;
     gap: 10px;
+    align-items: center;
     flex-wrap: wrap;
 }
 
 .skills-list img {
-    width: 55px;
-    height: 55px;
-    margin: 0;
-    border: none;
-    background: transparent;
+    width: 52px;
+    height: 52px;
 }
 
-#featured {
-    margin-top: 30px;
-}
+/* FEATURED */
 
 .featured-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 26px;
 }
 
-.feature-card,
-.logo-card,
-.poster-card {
-    background: rgba(255,255,255,0.78);
-    border: 1px solid rgba(0,0,0,0.15);
+.feature-main,
+.feature-stack-card {
+    border: 1px solid rgba(0,0,0,0.16);
+    background: rgba(255,255,255,0.84);
     padding: 18px;
-    text-align: center;
 }
 
-.feature-card img,
-.logo-card img,
-.poster-card img {
+.feature-main img {
     width: 100%;
-    display: block;
-    margin: 0 auto 14px auto;
+    height: 345px;
     object-fit: contain;
-    background: transparent;
+    display: block;
+    margin-bottom: 16px;
 }
 
-.feature-card img {
-    height: 230px;
-}
-
-.logo-grid {
+.feature-stack {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
+    grid-template-rows: 1fr 1fr;
+    gap: 26px;
 }
 
-.logo-card img {
-    height: 150px;
+.feature-stack-card img {
+    width: 100%;
+    height: 155px;
+    object-fit: contain;
+    display: block;
+    margin-bottom: 14px;
 }
 
-.poster-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
-}
-
-.poster-card img {
-    height: 260px;
+.project-kicker {
+    font-family: "Freeman", "Trebuchet MS", Arial, sans-serif;
+    font-size: 0.95rem;
+    letter-spacing: 0.4px;
+    margin-bottom: 4px;
 }
 
 .project-title {
     font-family: "Freeman", "Trebuchet MS", Arial, sans-serif;
-    font-size: 1.05rem;
+    font-size: 1.18rem;
     margin-bottom: 6px;
 }
 
 .project-caption {
-    font-size: 1.15rem;
+    font-size: 1.08rem;
+}
+
+/* GALLERY SECTIONS */
+
+.work-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 26px;
+}
+
+.work-card {
+    display: grid;
+    grid-template-columns: 170px 1fr;
+    gap: 18px;
+    border: 1px solid rgba(0,0,0,0.16);
+    background: rgba(255,255,255,0.82);
+    padding: 16px;
+    align-items: center;
+}
+
+.work-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
+    display: block;
+}
+
+.poster-card img {
+    height: 210px;
+}
+
+.work-text h3 {
+    font-family: "Freeman", "Trebuchet MS", Arial, sans-serif;
+    font-size: 1.12rem;
+    margin-bottom: 6px;
+}
+
+.work-text p {
+    font-size: 1.05rem;
 }
 
 footer {
+    width: var(--content-width);
+    margin-left: var(--paper-left-offset);
     text-align: center;
-    margin-top: 70px;
-    padding-top: 30px;
+    margin-top: 200px;
+    padding-top: 28px;
     border-top: 1px solid #111;
     font-size: 1rem;
     font-family: "Freeman", "Trebuchet MS", Arial, sans-serif;
@@ -264,29 +321,43 @@ footer a:hover {
     text-decoration: underline;
 }
 
-@media (max-width: 1250px) {
-    .container,
+/* RESPONSIVE */
+
+@media (max-width: 1320px) {
+    .container {
+        width: 100%;
+        margin-left: 0;
+        padding-left: 28px;
+        padding-right: 28px;
+    }
+
+    .paper-column,
+    footer {
+        width: 100%;
+        margin-left: 0;
+    }
+
     .notebook-bg {
         width: 100%;
-    }
-
-    .container {
-        padding-left: 30px;
-        padding-right: 30px;
-    }
-
-    .content-section {
-        width: 100%;
+        background-size: cover;
     }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 920px) {
     .about-grid,
-    .details,
+    .details-grid,
     .featured-grid,
-    .logo-grid,
-    .poster-grid {
+    .work-grid,
+    .work-card {
         grid-template-columns: 1fr;
+    }
+
+    .feature-stack {
+        grid-template-rows: auto;
+    }
+
+    .hero-title {
+        font-size: 3.7rem;
     }
 
     nav li {
@@ -294,12 +365,30 @@ footer a:hover {
         margin: 10px 0;
     }
 
-    .hero-title {
-        font-size: 3.6rem;
+    .about-portrait {
+        margin: 0 auto;
     }
 
-    .about-grid img {
-        margin: 0 auto;
+    .feature-main img,
+    .feature-stack-card img,
+    .work-card img,
+    .poster-card img {
+        height: auto;
+        max-height: 320px;
+    }
+
+    #about {
+        margin-top: 170px;
+    }
+
+    #featured,
+    #logos,
+    #posters {
+        margin-top: 150px;
+    }
+
+    footer {
+        margin-top: 140px;
     }
 }
 </style>
@@ -311,177 +400,184 @@ footer a:hover {
 
 <div class="container">
 
-<header id="top">
-    <div class="subtitle">Graphic Design</div>
-    <div class="hero-title">PORTFOLIO</div>
-    <div class="hero-note">A selection of branding, poster, and visual identity work by Anderson Smith.</div>
+    <div class="paper-column">
+        <header id="top">
+            <div class="subtitle">Graphic Design</div>
+            <div class="hero-title">PORTFOLIO</div>
+            <div class="hero-note">A selection of branding, poster, and visual identity work by Anderson Smith.</div>
 
-    <nav>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#featured">Featured</a></li>
-            <li><a href="#logos">Logofolio</a></li>
-            <li><a href="#posters">Posterfolio</a></li>
-        </ul>
-    </nav>
-</header>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#featured">Featured</a></li>
+                    <li><a href="#logos">Logofolio</a></li>
+                    <li><a href="#posters">Posterfolio</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
 
-<section id="about" class="content-section">
-    <div class="section-title">ABOUT ME</div>
-    <div class="section-intro">I’m a design student focused on typography, branding, poster design, and digital visual culture.</div>
+    <section id="about" class="paper-column">
+        <div class="section-title">ABOUT ME</div>
+        <div class="section-intro">Design student focused on typography, branding, poster design, and visual storytelling.</div>
 
-    <div class="about-grid">
-        <img src="portrait-placeholder.png" alt="Portrait of Anderson Smith">
+        <div class="about-grid">
+            <img class="about-portrait" src="portrait-placeholder.png" alt="Portrait of Anderson Smith">
 
-        <div class="about-copy">
-            <p>I'm a 19-year-old design student from London, Ontario with interests in typography, poster design, web design, and brand identity creation.</p>
+            <div class="about-copy">
+                <p>I'm a 19-year-old design student from London, Ontario with interests in typography, poster design, web design, and brand identity creation.</p>
 
-            <div class="details">
-                <div class="detail-card">
-                    <h3>EDUCATION</h3>
-                    <p>2024 – NOW</p>
-                    <p>Global Business and Digital Arts<br>University of Waterloo</p>
-                </div>
-
-                <div class="detail-card">
-                    <h3>SOFTWARE SKILLS</h3>
-                    <div class="skills-list">
-                        <img src="ps.png" alt="Adobe Photoshop icon">
-                        <img src="ai.png" alt="Adobe Illustrator icon">
-                        <img src="id.png" alt="Adobe InDesign icon">
+                <div class="details-grid">
+                    <div class="detail-card">
+                        <h3>EDUCATION</h3>
+                        <p>2024 – NOW</p>
+                        <p>Global Business and Digital Arts<br>University of Waterloo</p>
                     </div>
-                </div>
 
-                <div class="detail-card">
-                    <h3>INTERESTS</h3>
-                    <p>• Graphic Design<br>• Photography<br>• Music<br>• History<br>• Cinema<br>• Digital Culture</p>
-                </div>
+                    <div class="detail-card">
+                        <h3>SOFTWARE SKILLS</h3>
+                        <div class="skills-list">
+                            <img src="ps.png" alt="Adobe Photoshop icon">
+                            <img src="ai.png" alt="Adobe Illustrator icon">
+                            <img src="id.png" alt="Adobe InDesign icon">
+                        </div>
+                    </div>
 
-                <div class="detail-card">
-                    <h3>CONTACT</h3>
-                    <p>Email: <a href="mailto:smittya295@uwaterloo.ca">smittya295@uwaterloo.ca</a></p>
-                    <p>Phone: 519-677-5440</p>
+                    <div class="detail-card">
+                        <h3>INTERESTS</h3>
+                        <p>Graphic design, photography, music, history, cinema, and digital culture.</p>
+                    </div>
+
+                    <div class="detail-card">
+                        <h3>CONTACT</h3>
+                        <p>Email: <a href="mailto:smittya295@uwaterloo.ca">smittya295@uwaterloo.ca</a></p>
+                        <p>Phone: 519-677-5440</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section id="featured" class="content-section">
-    <div class="section-title">FEATURED WORK</div>
-    <div class="section-intro">A few projects that best represent my style and range across identity and poster design.</div>
+    <section id="featured" class="paper-column">
+        <div class="section-title">FEATURED WORK</div>
+        <div class="section-intro">Three projects that best show my range across logo design, theatrical poster work, and music-inspired visual design.</div>
 
-    <div class="featured-grid">
-        <div class="feature-card">
-            <img src="snacks-lattes-logo.png" alt="Snacks and Lattes café brand logo">
-            <div class="project-title">Snacks & Lattes</div>
-            <p class="project-caption">Café branding concept combining playful illustration and warm visual identity.</p>
+        <div class="featured-grid">
+            <article class="feature-main">
+                <img src="steel-ball-run.png" alt="Steel Ball Run inspired logo">
+                <div class="project-kicker">Featured Logo</div>
+                <div class="project-title">Steel Ball Run</div>
+                <p class="project-caption">A fan-inspired identity concept focused on motion, sharp contrast, and stylized typography. This piece stands out in my portfolio for its strong silhouette and energetic composition.</p>
+            </article>
+
+            <div class="feature-stack">
+                <article class="feature-stack-card">
+                    <img src="shrek-poster.png" alt="Shrek musical poster">
+                    <div class="project-kicker">Featured Poster</div>
+                    <div class="project-title">Shrek</div>
+                    <p class="project-caption">A theatrical poster built around humour, character recognition, and bold stage-poster appeal.</p>
+                </article>
+
+                <article class="feature-stack-card">
+                    <img src="elo-poster.png" alt="ELO psychedelic poster">
+                    <div class="project-kicker">Featured Poster</div>
+                    <div class="project-title">ELO</div>
+                    <p class="project-caption">A music poster using psychedelic influence, contrast, and visual rhythm to create an energetic retro feel.</p>
+                </article>
+            </div>
         </div>
+    </section>
 
-        <div class="feature-card">
-            <img src="la-la-land.png" alt="La La Land minimalist poster">
-            <div class="project-title">La La Land</div>
-            <p class="project-caption">A minimalist film poster focused on mood, colour, and recognizable iconography.</p>
+    <section id="logos" class="paper-column">
+        <div class="section-title">LOGOFOLIO</div>
+        <div class="section-intro">Identity work exploring illustration, personality, and memorable branding systems.</div>
+
+        <div class="work-grid">
+            <article class="work-card">
+                <img src="sun-face.png" alt="Sun Face logo illustration">
+                <div class="work-text">
+                    <h3>Sun Face</h3>
+                    <p>An illustrative logo concept built around expressive shape and a playful visual personality.</p>
+                </div>
+            </article>
+
+            <article class="work-card">
+                <img src="prof-caricature.png" alt="Caricature logo of Professor Will Zhao">
+                <div class="work-text">
+                    <h3>Professor Caricature</h3>
+                    <p>A caricature-based identity piece that leans into character design and a more personal tone.</p>
+                </div>
+            </article>
+
+            <article class="work-card">
+                <img src="skills-pin.png" alt="Skills Ontario pin design">
+                <div class="work-text">
+                    <h3>Skills Pin</h3>
+                    <p>A pin design concept created with a clean, graphic, and collectible look.</p>
+                </div>
+            </article>
+
+            <article class="work-card">
+                <img src="snacks-lattes-logo.png" alt="Snacks and Lattes café brand logo">
+                <div class="work-text">
+                    <h3>Snacks & Lattes</h3>
+                    <p>A café identity concept balancing friendliness, readability, and a warm brand presence.</p>
+                </div>
+            </article>
+
+            <article class="work-card">
+                <img src="skills-medal.png" alt="Skills Ontario medal redesign">
+                <div class="work-text">
+                    <h3>Skills Medal</h3>
+                    <p>A redesign concept intended to modernize a familiar competition symbol with a cleaner visual structure.</p>
+                </div>
+            </article>
         </div>
+    </section>
 
-        <div class="feature-card">
-            <img src="skills-medal.png" alt="Skills Ontario medal redesign">
-            <div class="project-title">Skills Medal</div>
-            <p class="project-caption">A redesign concept created to modernize a recognizable competition symbol.</p>
+    <section id="posters" class="paper-column">
+        <div class="section-title">POSTERFOLIO</div>
+        <div class="section-intro">Poster work focused on atmosphere, promotion, and visual storytelling through composition.</div>
+
+        <div class="work-grid">
+            <article class="work-card poster-card">
+                <img src="cake-pops.png" alt="Cake Pops promotional poster">
+                <div class="work-text">
+                    <h3>Cake Pops</h3>
+                    <p>A promotional poster using playful visual language and bright presentation to create an inviting food campaign.</p>
+                </div>
+            </article>
+
+            <article class="work-card poster-card">
+                <img src="la-la-land.png" alt="La La Land minimalist poster">
+                <div class="work-text">
+                    <h3>La La Land</h3>
+                    <p>A minimalist film poster designed to communicate mood and recognizable cinematic iconography with restraint.</p>
+                </div>
+            </article>
+
+            <article class="work-card poster-card">
+                <img src="silly-billies.png" alt="Silly Billies poster artwork">
+                <div class="work-text">
+                    <h3>Silly Billies</h3>
+                    <p>A lively poster piece built around expressive design choices and a more playful compositional structure.</p>
+                </div>
+            </article>
+
+            <article class="work-card poster-card">
+                <img src="snacks-lattes-poster.png" alt="Snacks and Lattes promotional poster">
+                <div class="work-text">
+                    <h3>Snacks & Lattes</h3>
+                    <p>A poster extension of the café brand, designed to carry the identity into a warm and inviting promotional format.</p>
+                </div>
+            </article>
         </div>
-    </div>
-</section>
+    </section>
 
-<section id="logos" class="content-section">
-    <div class="section-title">LOGOFOLIO</div>
-    <div class="section-intro">Logo and identity work exploring illustration, symbolism, and character-driven branding.</div>
-
-    <div class="logo-grid">
-        <div class="logo-card">
-            <img src="sun-face.png" alt="Sun Face logo illustration">
-            <div class="project-title">Sun Face</div>
-            <p class="project-caption">Illustrative logo concept built around expressive shape and personality.</p>
-        </div>
-
-        <div class="logo-card">
-            <img src="prof-caricature.png" alt="Caricature logo of Professor Will Zhao">
-            <div class="project-title">Professor Caricature</div>
-            <p class="project-caption">A caricature-based identity piece with a more playful and personal tone.</p>
-        </div>
-
-        <div class="logo-card">
-            <img src="steel-ball-run.png" alt="Steel Ball Run inspired logo">
-            <div class="project-title">Steel Ball Run</div>
-            <p class="project-caption">A fan-inspired logo exploring motion, energy, and stylized typography.</p>
-        </div>
-
-        <div class="logo-card">
-            <img src="skills-pin.png" alt="Skills Ontario pin design">
-            <div class="project-title">Skills Pin</div>
-            <p class="project-caption">Pin design concept created with a simple, graphic, and collectible look.</p>
-        </div>
-
-        <div class="logo-card">
-            <img src="snacks-lattes-logo.png" alt="Snacks and Lattes café brand logo">
-            <div class="project-title">Snacks & Lattes</div>
-            <p class="project-caption">A café logo balancing friendliness, readability, and brand charm.</p>
-        </div>
-
-        <div class="logo-card">
-            <img src="skills-medal.png" alt="Skills Ontario medal redesign">
-            <div class="project-title">Skills Medal</div>
-            <p class="project-caption">A medal redesign intended to feel cleaner, bolder, and more modern.</p>
-        </div>
-    </div>
-</section>
-
-<section id="posters" class="content-section">
-    <div class="section-title">POSTERFOLIO</div>
-    <div class="section-intro">Poster work focused on composition, atmosphere, event promotion, and visual storytelling.</div>
-
-    <div class="poster-grid">
-        <div class="poster-card">
-            <img src="cake-pops.png" alt="Cake Pops promotional poster">
-            <div class="project-title">Cake Pops</div>
-            <p class="project-caption">A promotional poster using bright visuals and playful food-based styling.</p>
-        </div>
-
-        <div class="poster-card">
-            <img src="la-la-land.png" alt="La La Land minimalist poster">
-            <div class="project-title">La La Land</div>
-            <p class="project-caption">A minimalist poster designed to capture romance and cinematic atmosphere.</p>
-        </div>
-
-        <div class="poster-card">
-            <img src="shrek-poster.png" alt="Shrek musical poster">
-            <div class="project-title">Shrek</div>
-            <p class="project-caption">A theatrical poster concept with bold humour and character-focused appeal.</p>
-        </div>
-
-        <div class="poster-card">
-            <img src="silly-billies.png" alt="Silly Billies poster artwork">
-            <div class="project-title">Silly Billies</div>
-            <p class="project-caption">A lively poster piece built around playful composition and expressive design.</p>
-        </div>
-
-        <div class="poster-card">
-            <img src="snacks-lattes-poster.png" alt="Snacks and Lattes promotional poster">
-            <div class="project-title">Snacks & Lattes</div>
-            <p class="project-caption">A poster extension of the café brand with a warm and inviting tone.</p>
-        </div>
-
-        <div class="poster-card">
-            <img src="elo-poster.png" alt="ELO psychedelic poster">
-            <div class="project-title">ELO</div>
-            <p class="project-caption">A music poster using psychedelic influence, contrast, and energetic layout.</p>
-        </div>
-    </div>
-</section>
-
-<footer>
-    Anderson Smith - Portfolio<br>
-    <a href="#top">Back to Top</a>
-</footer>
+    <footer>
+        Anderson Smith - Portfolio<br>
+        <a href="#top">Back to Top</a>
+    </footer>
 
 </div>
 </body>
