@@ -58,10 +58,10 @@ a{color:inherit}
     margin-left:var(--paper-left);
 }
 
-/* centered header independent of right-shifted content */
+/* centered header independent of shifted content */
 .hero-shell{
-    width:100%;
-    margin:0 auto;
+    width:var(--page-width);
+    margin-left:calc(-1 * var(--shift-right));
 }
 .hero-inner{
     width:760px;
@@ -457,6 +457,11 @@ footer a:hover{
         margin-left:0;
     }
 
+    .hero-shell{
+        width:100%;
+        margin-left:0;
+    }
+
     .hero-inner{
         width:100%;
         max-width:760px;
@@ -606,24 +611,24 @@ footer a:hover{
         <div class="featured-grid">
             <article class="feature-main">
                 <img src="steel-ball-run.png" alt="Steel Ball Run inspired logo">
-                <div class="project-kicker">Brand Identity • Personal Project</div>
+                <div class="project-kicker">Brand Identity • Personal Challenge</div>
                 <div class="project-title">Steel Ball Run</div>
-                <p class="project-caption">Created a fan-based logo exploring motion and stylized typography. Focused on strong silhouette and high contrast to reflect the energy of the source material.</p>
+                <p class="project-caption">This logo was a recreation challenge I gave myself. I wanted to see how closely I could rebuild the original look using my own design skills and approach.</p>
             </article>
 
             <div class="feature-stack">
                 <article class="feature-stack-card">
                     <img src="shrek-poster.png" alt="Shrek musical poster">
-                    <div class="project-kicker">Poster Design • Personal Project</div>
+                    <div class="project-kicker">Poster Design • High School Competition</div>
                     <div class="project-title">Shrek</div>
-                    <p class="project-caption">Designed a theatrical poster emphasizing character recognition and humour. Built to match stage production aesthetics and audience appeal.</p>
+                    <p class="project-caption">I made this poster for a graphic design competition in high school, and it ended up winning and becoming the official poster for our school’s production of <em>Shrek</em>.</p>
                 </article>
 
                 <article class="feature-stack-card">
                     <img src="elo-poster.png" alt="ELO psychedelic poster">
                     <div class="project-kicker">Poster Design • Personal Project</div>
                     <div class="project-title">ELO</div>
-                    <p class="project-caption">Developed a music poster inspired by psychedelic visuals, using colour contrast and composition to reflect the band’s sound and era.</p>
+                    <p class="project-caption">This was a personal project where I pushed my Illustrator skills by trying to recreate the feel of an ELO poster in my own way.</p>
                 </article>
             </div>
         </div>
@@ -638,7 +643,7 @@ footer a:hover{
                 <img src="sun-face.png" alt="Sun Face logo illustration">
                 <div class="work-text">
                     <h3>Sun Face</h3>
-                    <p>An illustrative logo concept built around expressive shape and a playful visual personality.</p>
+                    <p>This was a GBDA project where we had to create a logo that reflected a classmate’s personality. I used a bright, expressive look to match the person I was designing for.</p>
                 </div>
             </article>
 
@@ -646,15 +651,15 @@ footer a:hover{
                 <img src="prof-caricature.png" alt="Caricature logo of Professor Will Zhao">
                 <div class="work-text">
                     <h3>Professor Caricature</h3>
-                    <p>A caricature-based identity piece that leans into character design and a more personal tone.</p>
+                    <p>This mascot was one of my contributions to a group GBDA card game project. I designed it to resemble our professor and add some personality to the game.</p>
                 </div>
             </article>
 
             <article class="work-card">
                 <img src="skills-pin.png" alt="Skills Ontario pin design">
                 <div class="work-text">
-                    <h3>Skills Pin</h3>
-                    <p>A pin design concept created with a clean, graphic, and collectible look.</p>
+                    <h3>Skills Ontario Pin</h3>
+                    <p>I created this piece for the Skills Ontario 2024 design challenge and submitted it as part of my work for the competition.</p>
                 </div>
             </article>
 
@@ -662,15 +667,15 @@ footer a:hover{
                 <img src="snacks-lattes-logo.png" alt="Snacks and Lattes café brand logo">
                 <div class="work-text">
                     <h3>Snacks &amp; Lattes</h3>
-                    <p>A café identity concept balancing friendliness, readability, and a warm brand presence.</p>
+                    <p>This logo came from a high school branding project where I built the identity for a café concept from scratch.</p>
                 </div>
             </article>
 
             <article class="work-card">
                 <img src="skills-medal.png" alt="Skills Ontario medal redesign">
                 <div class="work-text">
-                    <h3>Skills Medal</h3>
-                    <p>A redesign concept intended to modernize a familiar competition symbol with a cleaner visual structure.</p>
+                    <h3>Skills Ontario Medal</h3>
+                    <p>Like the pin, this was also made for the Skills Ontario 2024 challenge and was part of the work I submitted.</p>
                 </div>
             </article>
         </div>
@@ -685,7 +690,7 @@ footer a:hover{
                 <img src="cake-pops.png" alt="Cake Pops promotional poster">
                 <div class="work-text">
                     <h3>Cake Pops</h3>
-                    <p>A promotional poster using playful visual language and bright presentation to create an inviting food campaign.</p>
+                    <p>This was part of the same GBDA project as Sun Face, where the goal was to visually reflect a classmate’s personality through design.</p>
                 </div>
             </article>
 
@@ -693,7 +698,7 @@ footer a:hover{
                 <img src="la-la-land.png" alt="La La Land minimalist poster">
                 <div class="work-text">
                     <h3>La La Land</h3>
-                    <p>A minimalist film poster designed to communicate mood and recognizable cinematic iconography with restraint.</p>
+                    <p>This was the first thing I made in GBDA, during our first workshop class when we were simply told to make whatever we wanted.</p>
                 </div>
             </article>
 
@@ -701,7 +706,7 @@ footer a:hover{
                 <img src="silly-billies.png" alt="Silly Billies poster artwork">
                 <div class="work-text">
                     <h3>Silly Billies</h3>
-                    <p>A lively poster piece built around expressive design choices and a more playful compositional structure.</p>
+                    <p>I made this poster for a high school band project, aiming for something fun and energetic that matched the tone of the group.</p>
                 </div>
             </article>
 
@@ -709,7 +714,7 @@ footer a:hover{
                 <img src="snacks-lattes-poster.png" alt="Snacks and Lattes promotional poster">
                 <div class="work-text">
                     <h3>Snacks &amp; Lattes</h3>
-                    <p>A poster extension of the café brand, designed to carry the identity into a warm and inviting promotional format.</p>
+                    <p>This poster was created alongside the Snacks &amp; Lattes branding project to expand the café concept into promotional material.</p>
                 </div>
             </article>
         </div>
@@ -733,7 +738,7 @@ footer a:hover{
                 <img src="Mozy1.png" alt="Mozy's Shawarma homepage redesign">
                 <div class="project-kicker">Homepage</div>
                 <div class="project-title">Landing Page Redesign</div>
-                <p class="project-caption">The homepage was rebuilt around a strong hero image, clearer menu options, and more confident branding so users can immediately understand the restaurant and act on ordering.</p>
+                <p class="project-caption">The homepage was rebuilt around stronger branding, clearer navigation, and a more confident first impression for the restaurant.</p>
             </article>
 
             <div class="mozy-side">
@@ -741,14 +746,14 @@ footer a:hover{
                     <img src="Mozy2.png" alt="Mozy's Shawarma menu page redesign">
                     <div class="project-kicker">Menu Page</div>
                     <div class="project-title">Organized Product Navigation</div>
-                    <p class="project-caption">The menu layout was reworked to make categories easier to scan and the browsing experience more intuitive.</p>
+                    <p class="project-caption">I reworked the menu page to make categories easier to scan and to make browsing feel less cluttered.</p>
                 </article>
 
                 <article class="mozy-small">
                     <img src="Mozy3.png" alt="Mozy's Shawarma order page redesign">
                     <div class="project-kicker">Order Flow</div>
                     <div class="project-title">Pickup and Delivery Split</div>
-                    <p class="project-caption">This page simplifies the ordering process by separating key actions and making the next step immediately obvious.</p>
+                    <p class="project-caption">This screen was designed to make the next step feel obvious by separating pickup and delivery into clear choices.</p>
                 </article>
             </div>
         </div>
@@ -763,7 +768,7 @@ footer a:hover{
             <div>
                 <div class="project-kicker">Group Project • Student App Concept</div>
                 <div class="project-title">CampusHaven</div>
-                <p class="project-caption">My role in the project focused on shaping the general visual identity of the app, creating the logo, designing the review screen and profile screen, and helping establish the app’s overall interactivity. The final concept aimed to make student housing research feel more trustworthy, organized, and student-centered.</p>
+                <p class="project-caption">This was a group project built around the student housing search. My role focused on shaping the app’s overall visual identity, creating the logo, designing the review screen and profile screen, and helping establish the app’s interactivity.</p>
             </div>
         </div>
 
@@ -772,7 +777,7 @@ footer a:hover{
                 <img src="Untitled (7).png" alt="CampusHaven home screen">
                 <div class="project-kicker">Main Experience</div>
                 <div class="project-title">Housing Discovery Home Screen</div>
-                <p class="project-caption">This screen establishes the primary browsing flow by surfacing reviewed properties, location details, and quick visual comparisons in a mobile-friendly layout.</p>
+                <p class="project-caption">This screen sets up the main browsing experience by surfacing reviewed properties, location details, and quick comparisons in one place.</p>
             </article>
 
             <div class="app-side">
@@ -780,42 +785,42 @@ footer a:hover{
                     <img src="Untitled (6).png" alt="CampusHaven login screen">
                     <div class="project-kicker">Entry Point</div>
                     <div class="project-title">Login Screen</div>
-                    <p class="project-caption">A simple onboarding screen that introduces the visual identity and keeps account access straightforward.</p>
+                    <p class="project-caption">This screen introduces the app with a simple sign-in flow and keeps the visual identity clean from the start.</p>
                 </article>
 
                 <article class="app-card">
                     <img src="Untitled (8).png" alt="CampusHaven search screen">
                     <div class="project-kicker">Search</div>
                     <div class="project-title">Property Search</div>
-                    <p class="project-caption">A focused search screen built to help students quickly compare listings and narrow down housing options.</p>
+                    <p class="project-caption">The search screen was made to help students quickly narrow down listings and compare places more easily.</p>
                 </article>
 
                 <article class="app-card tall">
                     <img src="Untitled (9).png" alt="CampusHaven review screen">
                     <div class="project-kicker">My Contribution</div>
                     <div class="project-title">Review Screen</div>
-                    <p class="project-caption">I designed the review screen to highlight peer feedback, category ratings, and a clearer sense of trust around each property.</p>
+                    <p class="project-caption">I designed this screen to make peer reviews feel more useful and trustworthy by organizing ratings into categories students actually care about.</p>
                 </article>
 
                 <article class="app-card">
                     <img src="Untitled (10).png" alt="CampusHaven property detail screen">
                     <div class="project-kicker">Details</div>
                     <div class="project-title">Property Detail View</div>
-                    <p class="project-caption">This screen supports deeper browsing with images, quick property facts, and interaction options that help users evaluate a space efficiently.</p>
+                    <p class="project-caption">This screen gives users a cleaner way to look through property photos and key facts before making a decision.</p>
                 </article>
 
                 <article class="app-card">
                     <img src="Untitled (11).png" alt="CampusHaven chat screen">
                     <div class="project-kicker">Interactivity</div>
                     <div class="project-title">Messaging Flow</div>
-                    <p class="project-caption">I also helped shape the app’s interactivity, including communication features that make the housing process feel more direct and practical.</p>
+                    <p class="project-caption">I also helped shape the app’s interactivity, including the messaging flow that makes communication feel more direct and useful.</p>
                 </article>
 
                 <article class="app-card tall">
                     <img src="Untitled (12).png" alt="CampusHaven profile screen">
                     <div class="project-kicker">My Contribution</div>
                     <div class="project-title">Profile Screen</div>
-                    <p class="project-caption">I designed the profile screen to organize student identity, saved content, and personal account information in a simple, clean layout.</p>
+                    <p class="project-caption">I designed the profile screen to keep saved content, identity, and account details organized in a way that feels simple and familiar.</p>
                 </article>
             </div>
         </div>
