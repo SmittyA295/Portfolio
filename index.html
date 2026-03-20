@@ -22,7 +22,7 @@ html {
     --page-width: 1200px;
     --content-width: 820px;
     --page-shift-right: 100px;
-    --section-gap: 220px;
+    --section-gap: 260px;
     --paper-left-offset: 190px;
     --body-text: 22px;
 }
@@ -56,11 +56,10 @@ body {
 .container {
     width: var(--page-width);
     margin-left: calc(50% - 600px + var(--page-shift-right));
-    padding: 70px 0 130px 0;
+    padding: 70px 0 140px 0;
     position: relative;
 }
 
-/* everything sits inside the main paper area, not the doodle bar */
 .paper-column {
     width: var(--content-width);
     margin-left: var(--paper-left-offset);
@@ -71,7 +70,6 @@ body {
 header {
     text-align: center;
     padding-top: 70px;
-    margin-bottom: 0;
 }
 
 .subtitle {
@@ -130,7 +128,7 @@ section {
 }
 
 #about {
-    margin-top: 230px;
+    margin-top: 330px; /* moved down so it sits below the ripped divider */
 }
 
 #featured,
@@ -157,18 +155,51 @@ section {
 
 .about-grid {
     display: grid;
-    grid-template-columns: 250px 1fr;
-    gap: 40px;
+    grid-template-columns: 360px 1fr;
+    gap: 38px;
     align-items: start;
 }
 
-.about-portrait {
+/* speech bubble / portrait composition */
+.portrait-wrap {
+    position: relative;
+    width: 360px;
+    height: 560px;
+}
+
+.portrait-bubble {
+    position: absolute;
+    left: 0;
+    top: 62px;
+    width: 330px;
+    height: 460px;
+    background: rgba(255,255,255,0.78);
+    clip-path: polygon(7% 28%, 33% 14%, 68% 6%, 100% 31%, 91% 77%, 31% 79%, 20% 100%, 20% 74%, 2% 62%);
+    z-index: 1;
+}
+
+.about-portrait-frame {
+    position: absolute;
+    left: 122px;
+    top: 0;
     width: 240px;
     height: 240px;
-    object-fit: cover;
-    border: 1px solid #111;
-    background: rgba(255,255,255,0.82);
+    border: 2px solid #222;
+    background: rgba(255,255,255,0.86);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
 }
+
+.about-portrait {
+    width: 208px;
+    height: 208px;
+    object-fit: cover;
+    display: block;
+}
+
+/* ABOUT TEXT SIDE */
 
 .about-copy > p {
     margin-bottom: 20px;
@@ -183,7 +214,7 @@ section {
 
 .detail-card {
     border: 1px solid rgba(0,0,0,0.16);
-    background: rgba(255,255,255,0.82);
+    background: rgba(255,255,255,0.84);
     padding: 18px 18px 16px 18px;
     min-height: 132px;
 }
@@ -196,14 +227,20 @@ section {
 
 .skills-list {
     display: flex;
-    gap: 10px;
-    align-items: center;
+    gap: 16px;
+    align-items: flex-end;
     flex-wrap: wrap;
+    margin-top: 6px;
 }
 
+/* critical fix: don't force equal height/width */
 .skills-list img {
-    width: 52px;
-    height: 52px;
+    width: auto;
+    height: auto;
+    max-height: 92px;
+    max-width: 92px;
+    object-fit: contain;
+    display: block;
 }
 
 /* FEATURED */
@@ -365,8 +402,20 @@ footer a:hover {
         margin: 10px 0;
     }
 
-    .about-portrait {
+    .portrait-wrap {
         margin: 0 auto;
+        width: 320px;
+        height: 500px;
+    }
+
+    .portrait-bubble {
+        width: 300px;
+        height: 400px;
+        top: 76px;
+    }
+
+    .about-portrait-frame {
+        left: 90px;
     }
 
     .feature-main img,
@@ -378,13 +427,13 @@ footer a:hover {
     }
 
     #about {
-        margin-top: 170px;
+        margin-top: 240px;
     }
 
     #featured,
     #logos,
     #posters {
-        margin-top: 150px;
+        margin-top: 170px;
     }
 
     footer {
@@ -422,7 +471,12 @@ footer a:hover {
         <div class="section-intro">Design student focused on typography, branding, poster design, and visual storytelling.</div>
 
         <div class="about-grid">
-            <img class="about-portrait" src="portrait-placeholder.png" alt="Portrait of Anderson Smith">
+            <div class="portrait-wrap">
+                <div class="portrait-bubble"></div>
+                <div class="about-portrait-frame">
+                    <img class="about-portrait" src="portrait-placeholder.png" alt="Portrait of Anderson Smith">
+                </div>
+            </div>
 
             <div class="about-copy">
                 <p>I'm a 19-year-old design student from London, Ontario with interests in typography, poster design, web design, and brand identity creation.</p>
@@ -437,9 +491,9 @@ footer a:hover {
                     <div class="detail-card">
                         <h3>SOFTWARE SKILLS</h3>
                         <div class="skills-list">
-                            <img src="ps.png" alt="Adobe Photoshop icon">
                             <img src="ai.png" alt="Adobe Illustrator icon">
-                            <img src="id.png" alt="Adobe InDesign icon">
+                            <img src="ps.png" alt="Adobe Photoshop icon">
+                            <img src="figma.png" alt="Figma icon">
                         </div>
                     </div>
 
@@ -467,7 +521,7 @@ footer a:hover {
                 <img src="steel-ball-run.png" alt="Steel Ball Run inspired logo">
                 <div class="project-kicker">Featured Logo</div>
                 <div class="project-title">Steel Ball Run</div>
-                <p class="project-caption">A fan-inspired identity concept focused on motion, sharp contrast, and stylized typography. This piece stands out in my portfolio for its strong silhouette and energetic composition.</p>
+                <p class="project-caption">A fan-inspired identity concept focused on motion, contrast, and stylized typography. This piece stands out through its strong silhouette and energetic composition.</p>
             </article>
 
             <div class="feature-stack">
