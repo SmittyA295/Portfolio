@@ -9,28 +9,31 @@
 
 <style>
 :root{
-    --page-width:1200px;
-    --content-width:820px;
-    --shift-right:100px;
-    --paper-left:190px;
-    --section-gap:260px;
-    --paper-bg:rgba(255,255,255,.84);
-    --border:1px solid rgba(0,0,0,.16);
-    --title-font:"Freeman","Trebuchet MS",Arial,sans-serif;
-    --body-font:"Nanum Pen Script","Comic Sans MS","Segoe UI",cursive,sans-serif;
+    --page-width: 1200px;
+    --content-width: 820px;
+    --shift-right: 100px;
+    --paper-left: 190px;
+    --panel-bg: rgba(255,255,255,.86);
+    --panel-border: 1px solid rgba(0,0,0,.15);
+    --title-font: "Freeman","Trebuchet MS",Arial,sans-serif;
+    --body-font: "Nanum Pen Script","Comic Sans MS","Segoe UI",cursive,sans-serif;
+    --transition-safe-gap: 340px;
 }
+
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
+
 body{
-    font-family:var(--body-font);
-    font-size:22px;
-    line-height:1.5;
-    color:#222;
-    background:#fff;
-    position:relative;
-    min-height:100vh;
+    font-family: var(--body-font);
+    font-size: 22px;
+    line-height: 1.5;
+    color: #222;
+    background: #fff;
+    position: relative;
+    min-height: 100vh;
 }
-img{max-width:100%;display:block}
+
+img{display:block;max-width:100%}
 a{color:inherit}
 
 .notebook-bg{
@@ -47,19 +50,24 @@ a{color:inherit}
 .container{
     width:var(--page-width);
     margin-left:calc(50% - 600px + var(--shift-right));
-    padding:140px 0 140px;
+    padding:140px 0 160px;
 }
+
 .paper-column{
     width:var(--content-width);
     margin-left:var(--paper-left);
 }
 
-header{text-align:center}
+header{
+    text-align:center;
+}
+
 .subtitle{
     font-family:"Give You Glory","Segoe Script",cursive;
     font-size:2rem;
     margin-bottom:4px;
 }
+
 .hero-title{
     font-family:"Irish Grover",Impact,sans-serif;
     font-size:5rem;
@@ -67,6 +75,7 @@ header{text-align:center}
     color:#6AE5B5;
     margin-bottom:14px;
 }
+
 .hero-note{
     max-width:620px;
     margin:0 auto;
@@ -95,11 +104,17 @@ nav a:hover{
     letter-spacing:.4px;
 }
 
-section{scroll-margin-top:40px}
+section{
+    scroll-margin-top:40px;
+    position:relative;
+    z-index:2;
+}
+
 #about{margin-top:330px}
 #featured{margin-top:260px}
-#logos{margin-top:210px}
-#posters{margin-top:260px}
+#logos{margin-top:230px}
+#posters{margin-top:var(--transition-safe-gap)}
+#web-design{margin-top:var(--transition-safe-gap)}
 
 .section-title{
     text-align:center;
@@ -107,54 +122,63 @@ section{scroll-margin-top:40px}
     font-size:2.35rem;
     margin-bottom:10px;
 }
+
 .section-intro{
     text-align:center;
-    max-width:640px;
+    max-width:680px;
     margin:0 auto 38px;
     font-size:1.2rem;
 }
 
-/* Shared card styles */
 .panel,
+.detail-card,
 .feature-main,
 .feature-stack-card,
 .work-card,
-.detail-card{
-    border:var(--border);
-    background:var(--paper-bg);
+.mozy-header,
+.mozy-main,
+.mozy-small{
+    background:var(--panel-bg);
+    border:var(--panel-border);
 }
+
 .project-kicker,
 .project-title,
-.work-text h3,
-.detail-card h3{
+.detail-card h3,
+.work-text h3{
     font-family:var(--title-font);
 }
+
 .project-kicker{
     font-size:.95rem;
-    letter-spacing:.4px;
+    letter-spacing:.3px;
     margin-bottom:4px;
 }
+
 .project-title{
     font-size:1.18rem;
     margin-bottom:6px;
 }
+
 .project-caption,
 .work-text p{
     font-size:1.05rem;
 }
 
-/* About */
+/* ABOUT */
 .about-grid{
     display:grid;
     grid-template-columns:360px 1fr;
     gap:38px;
     align-items:start;
 }
+
 .portrait-wrap{
     position:relative;
     width:360px;
     height:560px;
 }
+
 .portrait-bubble{
     position:absolute;
     left:0;
@@ -164,6 +188,7 @@ section{scroll-margin-top:40px}
     background:rgba(255,255,255,.78);
     clip-path:polygon(7% 28%,33% 14%,68% 6%,100% 31%,91% 77%,31% 79%,20% 100%,20% 74%,2% 62%);
 }
+
 .about-portrait-frame{
     position:absolute;
     left:122px;
@@ -175,6 +200,7 @@ section{scroll-margin-top:40px}
     align-items:center;
     justify-content:center;
 }
+
 .about-portrait{
     width:208px;
     height:208px;
@@ -183,20 +209,25 @@ section{scroll-margin-top:40px}
     outline:none;
     box-shadow:none;
 }
-.about-copy>p{margin-bottom:20px}
+
+.about-copy > p{margin-bottom:20px}
+
 .details-grid{
     display:grid;
     grid-template-columns:1fr 1fr;
     gap:22px;
 }
+
 .detail-card{
     padding:18px 18px 16px;
     min-height:132px;
 }
+
 .detail-card h3{
     font-size:1.15rem;
     margin-bottom:8px;
 }
+
 .skills-list{
     display:flex;
     gap:16px;
@@ -204,6 +235,7 @@ section{scroll-margin-top:40px}
     flex-wrap:wrap;
     margin-top:6px;
 }
+
 .skills-list img{
     width:auto;
     height:auto;
@@ -212,26 +244,31 @@ section{scroll-margin-top:40px}
     object-fit:contain;
 }
 
-/* Featured */
+/* FEATURED */
 .featured-grid{
     display:grid;
     grid-template-columns:1.15fr .85fr;
     gap:26px;
+    margin-bottom:40px;
 }
+
 .feature-main,
 .feature-stack-card{
     padding:18px;
 }
+
 .feature-main img{
     width:100%;
     height:345px;
     object-fit:contain;
     margin-bottom:16px;
 }
+
 .feature-stack{
     display:grid;
     gap:26px;
 }
+
 .feature-stack-card img{
     width:100%;
     height:155px;
@@ -239,12 +276,13 @@ section{scroll-margin-top:40px}
     margin-bottom:14px;
 }
 
-/* Work sections */
+/* GENERAL WORK SECTIONS */
 .work-grid{
     display:grid;
     grid-template-columns:repeat(2,1fr);
     gap:26px;
 }
+
 .work-card{
     display:grid;
     grid-template-columns:170px 1fr;
@@ -252,30 +290,93 @@ section{scroll-margin-top:40px}
     align-items:center;
     padding:16px;
 }
+
 .work-card img{
     width:100%;
     height:150px;
     object-fit:contain;
 }
-.poster-card img{height:210px}
+
+.poster-card img{
+    height:210px;
+}
+
 .work-text h3{
     font-size:1.12rem;
     margin-bottom:6px;
 }
 
+/* MOZY WEB DESIGN */
+#web-design .section-intro{
+    max-width:760px;
+}
+
+.mozy-header{
+    display:grid;
+    grid-template-columns:180px 1fr;
+    gap:22px;
+    align-items:center;
+    padding:20px;
+    margin-bottom:28px;
+}
+
+.mozy-logo{
+    width:100%;
+    max-width:160px;
+    object-fit:contain;
+    justify-self:center;
+}
+
+.mozy-grid{
+    display:grid;
+    grid-template-columns:1.15fr .85fr;
+    gap:26px;
+    align-items:start;
+}
+
+.mozy-main,
+.mozy-small{
+    padding:18px;
+}
+
+.mozy-main img{
+    width:100%;
+    height:420px;
+    object-fit:cover;
+    object-position:top center;
+    margin-bottom:16px;
+}
+
+.mozy-side{
+    display:grid;
+    gap:26px;
+}
+
+.mozy-small img{
+    width:100%;
+    height:185px;
+    object-fit:cover;
+    object-position:top center;
+    margin-bottom:14px;
+}
+
 footer{
     width:var(--content-width);
-    margin:180px 0 0 var(--paper-left);
+    margin:220px 0 0 var(--paper-left);
     text-align:center;
     font-size:1rem;
     font-family:var(--title-font);
 }
+
 footer a{
     display:inline-block;
     margin-top:10px;
     text-decoration:none;
 }
-footer a:hover{text-decoration:underline}
+
+footer a:hover{
+    text-decoration:underline;
+}
 
 @media (max-width:1320px){
     .container{
@@ -284,48 +385,69 @@ footer a:hover{text-decoration:underline}
         padding-left:28px;
         padding-right:28px;
     }
-    .paper-column,footer{
+
+    .paper-column,
+    footer{
         width:100%;
         margin-left:0;
     }
+
     .notebook-bg{
         width:100%;
         background-size:cover;
     }
 }
+
 @media (max-width:920px){
     .about-grid,
     .details-grid,
     .featured-grid,
     .work-grid,
-    .work-card{
+    .work-card,
+    .mozy-header,
+    .mozy-grid{
         grid-template-columns:1fr;
     }
+
     .hero-title{font-size:3.7rem}
+
     nav li{
         display:block;
         margin:10px 0;
     }
+
     .portrait-wrap{
         width:320px;
         height:500px;
         margin:0 auto;
     }
+
     .portrait-bubble{
         width:300px;
         height:400px;
         top:76px;
     }
-    .about-portrait-frame{left:90px}
+
+    .about-portrait-frame{
+        left:90px;
+    }
+
     .feature-main img,
     .feature-stack-card img,
     .work-card img,
-    .poster-card img{
+    .poster-card img,
+    .mozy-main img,
+    .mozy-small img{
         height:auto;
         max-height:320px;
     }
+
+    .mozy-logo{
+        max-width:140px;
+    }
+
     #about{margin-top:240px}
-    #featured,#logos,#posters{margin-top:170px}
+    #featured,#logos,#posters,#web-design{margin-top:170px}
     footer{margin-top:140px}
 }
 </style>
@@ -340,7 +462,7 @@ footer a:hover{text-decoration:underline}
         <header id="top">
             <div class="subtitle">Graphic Design</div>
             <div class="hero-title">PORTFOLIO</div>
-            <div class="hero-note">A selection of branding, poster, and visual identity work by Anderson Smith.</div>
+            <div class="hero-note">Branding and visual identity designer focused on bold, expressive graphics and character-driven design.</div>
 
             <nav>
                 <ul>
@@ -348,6 +470,7 @@ footer a:hover{text-decoration:underline}
                     <li><a href="#featured">Featured</a></li>
                     <li><a href="#logos">Logofolio</a></li>
                     <li><a href="#posters">Posterfolio</a></li>
+                    <li><a href="#web-design">Web Design</a></li>
                 </ul>
             </nav>
         </header>
@@ -406,24 +529,24 @@ footer a:hover{text-decoration:underline}
         <div class="featured-grid">
             <article class="feature-main">
                 <img src="steel-ball-run.png" alt="Steel Ball Run inspired logo">
-                <div class="project-kicker">Featured Logo</div>
+                <div class="project-kicker">Brand Identity • Personal Project</div>
                 <div class="project-title">Steel Ball Run</div>
-                <p class="project-caption">A fan-inspired identity concept focused on motion, contrast, and stylized typography. This piece stands out through its strong silhouette and energetic composition.</p>
+                <p class="project-caption">Created a fan-based logo exploring motion and stylized typography. Focused on strong silhouette and high contrast to reflect the energy of the source material.</p>
             </article>
 
             <div class="feature-stack">
                 <article class="feature-stack-card">
                     <img src="shrek-poster.png" alt="Shrek musical poster">
-                    <div class="project-kicker">Featured Poster</div>
+                    <div class="project-kicker">Poster Design • Personal Project</div>
                     <div class="project-title">Shrek</div>
-                    <p class="project-caption">A theatrical poster built around humour, character recognition, and bold stage-poster appeal.</p>
+                    <p class="project-caption">Designed a theatrical poster emphasizing character recognition and humour. Built to match stage production aesthetics and audience appeal.</p>
                 </article>
 
                 <article class="feature-stack-card">
                     <img src="elo-poster.png" alt="ELO psychedelic poster">
-                    <div class="project-kicker">Featured Poster</div>
+                    <div class="project-kicker">Poster Design • Personal Project</div>
                     <div class="project-title">ELO</div>
-                    <p class="project-caption">A music poster using psychedelic influence, contrast, and visual rhythm to create an energetic retro feel.</p>
+                    <p class="project-caption">Developed a music poster inspired by psychedelic visuals, using colour contrast and composition to reflect the band’s sound and era.</p>
                 </article>
             </div>
         </div>
@@ -461,7 +584,7 @@ footer a:hover{text-decoration:underline}
             <article class="work-card">
                 <img src="snacks-lattes-logo.png" alt="Snacks and Lattes café brand logo">
                 <div class="work-text">
-                    <h3>Snacks & Lattes</h3>
+                    <h3>Snacks &amp; Lattes</h3>
                     <p>A café identity concept balancing friendliness, readability, and a warm brand presence.</p>
                 </div>
             </article>
@@ -508,10 +631,55 @@ footer a:hover{text-decoration:underline}
             <article class="work-card poster-card">
                 <img src="snacks-lattes-poster.png" alt="Snacks and Lattes promotional poster">
                 <div class="work-text">
-                    <h3>Snacks & Lattes</h3>
+                    <h3>Snacks &amp; Lattes</h3>
                     <p>A poster extension of the café brand, designed to carry the identity into a warm and inviting promotional format.</p>
                 </div>
             </article>
+        </div>
+    </section>
+
+    <section id="web-design" class="paper-column">
+        <div class="section-title">WEB DESIGN</div>
+        <div class="section-intro">A redesign concept for Mozy’s Shawarma. I was tasked with finding a nearby business and overhauling an amateurly designed website into a cleaner, more modern, and more user-friendly experience.</div>
+
+        <div class="mozy-header">
+            <img class="mozy-logo" src="logo-1.png" alt="Mozy's Shawarma logo">
+            <div class="mozy-header-text">
+                <div class="project-kicker">Website Redesign • Solo Project</div>
+                <div class="project-title">Mozy’s Shawarma Website Overhaul</div>
+                <p class="project-caption">This project focused on improving visual hierarchy, navigation clarity, and overall professionalism for a local restaurant website. The redesign emphasizes strong food imagery, clearer calls to action, and a more polished digital brand presence.</p>
+            </div>
+        </div>
+
+        <div class="mozy-grid">
+            <article class="mozy-main">
+                <img src="Mozy1.png" alt="Mozy's Shawarma homepage redesign">
+                <div class="mozy-text">
+                    <div class="project-kicker">Homepage</div>
+                    <div class="project-title">Landing Page Redesign</div>
+                    <p class="project-caption">A homepage redesign built around bold typography, strong food photography, and a clearer call to action for ordering.</p>
+                </div>
+            </article>
+
+            <div class="mozy-side">
+                <article class="mozy-small">
+                    <img src="Mozy2.png" alt="Mozy's Shawarma menu page redesign">
+                    <div class="mozy-text">
+                        <div class="project-kicker">Menu Page</div>
+                        <div class="project-title">Organized Product Navigation</div>
+                        <p class="project-caption">The menu layout was reworked to make categories easier to scan and the browsing experience more intuitive.</p>
+                    </div>
+                </article>
+
+                <article class="mozy-small">
+                    <img src="Mozy3.png" alt="Mozy's Shawarma order page redesign">
+                    <div class="mozy-text">
+                        <div class="project-kicker">Order Flow</div>
+                        <div class="project-title">Pickup and Delivery Split</div>
+                        <p class="project-caption">This page simplifies the ordering process by separating key actions and making the next step immediately obvious.</p>
+                    </div>
+                </article>
+            </div>
         </div>
     </section>
 
